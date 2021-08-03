@@ -1,11 +1,17 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
+import { ThemeProvider } from 'styled-components/native';
 
-import { RestaurantsScreen } from './src/features/restaurants/ components/screens/restaurants.screen';
+import {theme} from "./src/infrastructure/theme"
+import {RestaurantsScreen} from "./src/features/restaurants/screens/restaurants.screen"
 export default function App() {
 
   return (
     <>
+      <ThemeProvider theme={theme}>
         <RestaurantsScreen />
+      </ThemeProvider>
+        <StatusBar style= "auto"/>
     </>
   );
 }
